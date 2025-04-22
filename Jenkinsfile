@@ -38,7 +38,7 @@ pipeline {
                     echo "Waiting for app to start..."
                     sleep 10 // Give app time to start
                     echo "Testing app on port 3000..."
-                    sh 'curl --fail http://ecom-app:3000 || (echo "App failed to start!" && exit 1)'
+                    sh 'curl --fail http://localhost:3000 || (echo "App failed to start!" && exit 1)'
                 }
             }
         }
