@@ -37,7 +37,7 @@ pipeline {
                     sleep 10
                     echo "Testing app on port 3000..."
                     // ✅ Fixed this line
-                    sh 'curl --fail http://localhost:3000 || (echo App failed to start! && exit 1)'
+                   sh 'curl --fail http://localhost:80 || (echo App failed to start! && exit 1)'
                 }
             }
         }
