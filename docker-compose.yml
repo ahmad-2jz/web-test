@@ -4,6 +4,6 @@ services:
   web:
     build: .
     ports:
-      - "3000:3000"  # Change this port if your app uses a different one
+      - "3000:80"  # Change this port if your app uses a different one
     restart: unless-stopped
 
