@@ -20,7 +20,8 @@ jobs:
         username: root
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "."
-        target: /home/root/static-site
+        target: root/static-site
+
 
     - name: SSH and deploy with Docker
       uses: appleboy/ssh-action@master
@@ -29,7 +30,7 @@ jobs:
         username: root
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd ~/static-site
+          cd root/static-site
           docker stop site || true && docker rm site || true
           docker build -t site .
           docker run -d -p 80:80 --name site site
